@@ -1,0 +1,124 @@
+{
+  "emotions": {
+    "angry": {
+      "label_fr": "Colère",
+      "valence": "négative",
+      "description": "Sourcils abaissés et rapprochés, regard fixe, mâchoire serrée.",
+      "comportement": "Tension et irritation ; réaction possible de confrontation ou de défense.",
+      "profil": "Expressions de tension fréquentes dans ces images (contexte de frustration ou d'exigence)."
+    },
+    "disgust": {
+      "label_fr": "Dégoût",
+      "valence": "négative",
+      "description": "Nez plissé, lèvre supérieure relevée.",
+      "comportement": "Rejet ou aversion envers un stimulus ; tendance à l'évitement.",
+      "profil": "Expressions de rejet dominantes dans ces images."
+    },
+    "fear": {
+      "label_fr": "Peur",
+      "valence": "négative",
+      "description": "Yeux écarquillés, sourcils relevés, bouche tendue.",
+      "comportement": "Vigilance accrue ; tendance à la prudence ou à la fuite.",
+      "profil": "Expressions d'inquiétude ou de vigilance dominantes dans ces images."
+    },
+    "happy": {
+      "label_fr": "Joie",
+      "valence": "positive",
+      "description": "Coins des lèvres relevés, joues remontées, plis au coin des yeux.",
+      "comportement": "Ouverture sociale, approche, coopération.",
+      "profil": "Expressions positives et ouvertes dominantes dans ces images."
+    },
+    "sad": {
+      "label_fr": "Tristesse",
+      "valence": "négative",
+      "description": "Coins des lèvres abaissés, paupières tombantes, sourcils inclinés.",
+      "comportement": "Retrait et baisse d'énergie ; besoin possible de soutien.",
+      "profil": "Expressions de retrait ou de tristesse dominantes dans ces images."
+    },
+    "surprise": {
+      "label_fr": "Surprise",
+      "valence": "neutre",
+      "description": "Sourcils relevés, yeux grands ouverts, bouche entrouverte.",
+      "comportement": "Réaction à un événement inattendu ; attention tournée vers le stimulus.",
+      "profil": "Expressions de réactivité dominantes dans ces images."
+    },
+    "neutral": {
+      "label_fr": "Neutre",
+      "valence": "neutre",
+      "description": "Visage au repos, sans contraction musculaire marquée.",
+      "comportement": "Calme, concentration ou absence d'expression marquée.",
+      "profil": "Expressions calmes et posées dominantes dans ces images."
+    }
+  },
+  "fer": [
+    {
+      "classe": "angry",
+      "train": 3995,
+      "test": 958,
+      "total": 4953
+    },
+    {
+      "classe": "disgust",
+      "train": 436,
+      "test": 111,
+      "total": 547
+    },
+    {
+      "classe": "fear",
+      "train": 4097,
+      "test": 1024,
+      "total": 5121
+    },
+    {
+      "classe": "happy",
+      "train": 7215,
+      "test": 1774,
+      "total": 8989
+    },
+    {
+      "classe": "neutral",
+      "train": 4965,
+      "test": 1233,
+      "total": 6198
+    },
+    {
+      "classe": "sad",
+      "train": 4830,
+      "test": 1247,
+      "total": 6077
+    },
+    {
+      "classe": "surprise",
+      "train": 3171,
+      "test": 831,
+      "total": 4002
+    }
+  ],
+  "sources": [
+    {
+      "reference": "Ekman, P. (1992). An argument for basic emotions. Cognition & Emotion, 6(3-4).",
+      "usage": "Émotions de base (colère, dégoût, peur, joie, tristesse, surprise)",
+      "lien": "https://doi.org/10.1080/02699939208411068"
+    },
+    {
+      "reference": "Goodfellow et al. (2013). Challenges in Representation Learning: A report on three machine learning contests.",
+      "usage": "Jeu de données FER-2013 (7 classes d'expressions faciales)",
+      "lien": "https://arxiv.org/abs/1307.0414"
+    },
+    {
+      "reference": "FER-2013 sur Kaggle",
+      "usage": "Téléchargement du jeu de données (images 48x48)",
+      "lien": "https://www.kaggle.com/datasets/msambare/fer2013"
+    },
+    {
+      "reference": "Modèle dima806/facial_emotions_image_detection (Hugging Face)",
+      "usage": "Modèle pré-entraîné de classification d'émotions (principal)",
+      "lien": "https://huggingface.co/dima806/facial_emotions_image_detection"
+    },
+    {
+      "reference": "Modèle trpakov/vit-face-expression (Hugging Face)",
+      "usage": "Modèle pré-entraîné de secours",
+      "lien": "https://huggingface.co/trpakov/vit-face-expression"
+    }
+  ]
+}

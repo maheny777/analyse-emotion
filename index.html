@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analyse d'émotion par image</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- SheetJS : lecture/écriture Excel dans le navigateur -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🧠 Analyse d'émotion et de comportement par image</h1>
+    <p class="notice">
+      <strong>Projet pédagogique.</strong> Le système estime l'<em>expression faciale visible</em>.
+      Il ne détermine ni le caractère, ni l'état intérieur, ni l'identité d'une personne.
+      Vos images restent dans votre navigateur : rien n'est envoyé à un serveur.
+    </p>
+  </header>
+
+  <main>
+    <section id="status" class="status loading" aria-live="polite">
+      <div id="status-text">Initialisation…</div>
+      <div class="progress"><div id="progress-bar"></div></div>
+      <button id="retry" hidden>Réessayer</button>
+    </section>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-tab="single">Une image</button>
+      <button class="tab" data-tab="batch">Plusieurs images (profil)</button>
+      <button class="tab" data-tab="data">Données (Excel)</button>
+      <button class="tab" data-tab="about">Pipeline et éthique</button>
+    </nav>
+
+    <section id="tab-single" class="panel active">
+      <div class="row">
+        <div class="col">
+          <label class="file-label">
+            <input type="file" id="file-single" accept="image/*" disabled>
+            <span>Choisir une image…</span>
+          </label>
+          <img id="preview-single" class="preview" alt="Aperçu" hidden>
+        </div>
+        <div class="col">
+          <div id="scores-single" class="scores"></div>
+          <div id="report-single" class="report"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-batch" class="panel">
+      <label class="file-label">
+        <input type="file" id="file-batch" accept="image/*" multiple disabled>
+        <span>Choisir plusieurs images…</span>
+      </label>
+      <div id="batch-progress" class="muted"></div>
+      <div id="batch-table-wrap" class="table-wrap"></div>
+      <div id="report-batch" class="report"></div>
+      <button id="export-batch" hidden>⬇️ Exporter en Excel</button>
+    </section>
+
+    <section id="tab-data" class="panel">
+      <p class="muted" id="data-origin"></p>
+      <h2>Émotions de base</h2>
+      <div id="table-emotions" class="table-wrap"></div>
+      <h2>Statistiques FER-2013</h2>
+      <div id="table-fer" class="table-wrap"></div>
+      <h2>Sources</h2>
+      <div id="table-sources" class="table-wrap"></div>
+    </section>
+
+    <section id="tab-about" class="panel">
+      <h2>Pipeline</h2>
+      <img src="docs/pipeline.png" alt="Schéma du pipeline" class="pipeline">
+      <h2>Limites et éthique</h2>
+      <ul>
+        <li>Une expression faciale n'est pas un état intérieur : le modèle peut se tromper.</li>
+        <li>Le « profil » sur plusieurs images décrit des expressions, pas une personnalité.</li>
+        <li>Ne pas utiliser pour évaluer, recruter ou surveiller des personnes.</li>
+        <li>Modèle : <a href="https://huggingface.co/Xenova/facial_emotions_image_detection" target="_blank" rel="noopener">Xenova/facial_emotions_image_detection</a>
+            (version ONNX de dima806/facial_emotions_image_detection), exécuté localement par transformers.js.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
