@@ -1,3 +1,12 @@
+---
+title: Analyse d'émotion par image
+emoji: 🧠
+colorFrom: blue
+colorTo: purple
+sdk: static
+pinned: false
+---
+
 membre dans le groupe :
 440H-TOL MAHENY EREFO JOSAIA
 448H-TOL MIHAISOA Clarisette Louiyah Maximine
@@ -5,12 +14,11 @@ membre dans le groupe :
 451H-TOL MITOVIMANA EMMANUEL
 478H-TOL: RAZAFIARISOA Eddienne Lorizia
 
-
 ---
-THEME : 
+THEME :
 # Analyse d'émotion et de comportement par image
 
- système estime l'**expression faciale visible** sur une image,
+système estime l'**expression faciale visible** sur une image,
 puis associe un comportement à l'émotion détectée.
 
 **Space statique** : tout s'exécute dans le navigateur (HTML + JavaScript). Aucun serveur Python,
