@@ -1,18 +1,17 @@
----
-title: Analyse Emotion Image
-emoji: 🧠
-colorFrom: indigo
-colorTo: purple
-sdk: static
-app_file: index.html
-pinned: false
-short_description: Analyse d'émotion par image (100 % navigateur)
----
+membre dans le groupe :
+440H-TOL MAHENY EREFO JOSAIA
+448H-TOL MIHAISOA Clarisette Louiyah Maximine
+444H-TOL MANANTENA FAUSTIN
+451H-TOL MITOVIMANA EMMANUEL
+478H-TOL: RAZAFIARISOA Eddienne Lorizia
 
+
+---
+THEME : 
 # Analyse d'émotion et de comportement par image
 
-Projet d'examen (IA). Le système estime l'**expression faciale visible** sur une image,
-puis associe un comportement à l'émotion détectée à l'aide d'une base Excel.
+ système estime l'**expression faciale visible** sur une image,
+puis associe un comportement à l'émotion détectée.
 
 **Space statique** : tout s'exécute dans le navigateur (HTML + JavaScript). Aucun serveur Python,
 donc aucune erreur de build. Les images ne quittent pas l'ordinateur de l'utilisateur.
