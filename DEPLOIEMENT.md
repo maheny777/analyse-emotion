@@ -5,7 +5,8 @@ Git et Git LFS installés (`git lfs version`), un compte Hugging Face (et GitHub
 
 ## 1. Créer le Space
 huggingface.co -> New -> Space
-- Name : `emotion-image-ia`
+- Name : `analyse-emotion`
+- Owner : `mahenyjoker`
 - SDK : **Static** (choisir « Blank »)
 - Visibilité : Public (gratuit)
 
@@ -40,9 +41,17 @@ git remote add origin https://github.com/VOTRE_USER/emotion-image-ia.git
 git push -u origin main
 ```
 Synchronisation automatique GitHub -> Space :
-1. GitHub : Settings -> Secrets and variables -> Actions -> secret `HF_TOKEN`
-2. Remplacer `USERNAME` et `NOM_DU_SPACE` dans `.github/workflows/sync.yml`
-3. Chaque `git push` sur `main` met le Space à jour.
+1. GitHub : Settings -> Secrets and variables -> Actions -> secret `HF_TOKEN` (token HF Write)
+2. Variables facultatives (même écran, onglet « Variables ») :
+   - `HF_USERNAME` : votre nom d'utilisateur Hugging Face (défaut : `mahenyjoker`)
+   - `HF_SPACE` : nom du Space (défaut : `analyse-emotion`)
+3. Chaque `git push` sur `main` met le Space à jour (ou lancer le workflow manuellement).
+
+## 4 bis. Lancer en local avant de déployer
+```bash
+python -m http.server 8000
+# ouvrir http://localhost:8000
+```
 
 ## 5. En cas de problème
 - Page blanche : ouvrir la console du navigateur (F12) et lire l'erreur.

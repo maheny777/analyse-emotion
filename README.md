@@ -27,6 +27,25 @@ donc aucune erreur de build. Les images ne quittent pas l'ordinateur de l'utilis
 4. Interprétation avec `data/emotions_reference.xlsx` (Ekman 1992, FER-2013)
 5. Interface : une image, ou profil sur plusieurs images avec export Excel
 
+## Lancer en local
+
+Le projet doit être servi en HTTP (pas ouvert en `file://`) pour charger le modèle et l'Excel.
+
+```bash
+python -m http.server 8000
+# puis ouvrir http://localhost:8000
+```
+
+Au premier chargement, le modèle (~90 Mo) est téléchargé depuis Hugging Face puis mis en cache
+par le navigateur. Une connexion Internet est donc nécessaire pour cette première étape.
+
+## Régénérer les données
+
+```bash
+pip install -r tools/requirements.txt
+python tools/build_data.py
+```
+
 ## Structure
 
 ```
@@ -35,6 +54,7 @@ data/emotions_reference.xlsx      base de données (Excel)
 data/emotions_reference.json      copie de secours
 docs/pipeline.png                 schéma du pipeline
 tools/build_data.py               régénère l'Excel et le JSON
+tools/requirements.txt            dépendances du pipeline de données
 ```
 
 ## Limites et éthique
