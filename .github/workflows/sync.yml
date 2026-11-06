@@ -21,7 +21,7 @@ jobs:
           lfs: true
       - name: Push vers le Space
         env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_TOKEN: ${{ secrets.IA_ANALYSTE }}
         run: |
           git lfs install
           git push --force "https://${HF_USERNAME}:${HF_TOKEN}@huggingface.co/spaces/${HF_USERNAME}/${HF_SPACE}" main
